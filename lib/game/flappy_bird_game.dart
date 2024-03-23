@@ -6,6 +6,7 @@ import 'package:flappy_bird_game/components/bird.dart';
 import 'package:flappy_bird_game/components/ground.dart';
 import 'package:flappy_bird_game/components/pipe_group.dart';
 import 'package:flappy_bird_game/game/configuration.dart';
+import 'package:flappy_bird_game/game/high_score_manager.dart';
 import 'package:flutter/painting.dart';
 
 class FlappyBirdGame extends FlameGame with TapDetector, HasCollisionDetection {
@@ -47,5 +48,8 @@ class FlappyBirdGame extends FlameGame with TapDetector, HasCollisionDetection {
     super.update(dt);
     interval.update(dt);
     score.text = 'Score: ${bird.score}';
+    if (isHit) {
+      HighScoreManager.setHighScore(bird.score);
+    }
   }
 }
