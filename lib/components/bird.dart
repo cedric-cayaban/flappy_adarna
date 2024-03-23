@@ -22,7 +22,7 @@ class Bird extends SpriteGroupComponent<BirdMovement>
 
     gameRef.bird;
 
-    size = Vector2(80, 100);
+    size = Vector2(65, 55);
     position = Vector2(50, gameRef.size.y / 2 - size.y / 2);
     current = BirdMovement.middle;
     sprites = {
